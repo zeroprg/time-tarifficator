@@ -1,0 +1,55 @@
+- tariffId: 1
+  zoneId: 123
+  description: working horse
+  timeUnits:
+    - parkingTime: Mon%Fri,9:00%15:00
+      rate:
+        rateType: progressive
+        rate:
+        - price: 35$
+          rateInterval: 30m
+        - price: 25$
+          rateInterval: 1h
+        - price: 20$
+          rateType: othertime
+    - parkingTime: Sat%Sun
+      rate:
+        rateType: flat
+        price: 20$
+- tariffId: 2
+  zoneId: 1234
+  description: festival's tariff
+  timeUnits:
+  - parkingTime: Christmas-2017,9:00%15:00
+    rate:
+      rateType: progressive
+      rate:
+      - price: 35$
+        rateInterval: 30m
+      - price: 25$
+        rateInterval: 1h
+      - price: 20$
+        rateType: othertime
+  - parkingTime: Sat%Sun
+    rate:
+      rateType: flat
+      price: 20$
+- tariffId: 3
+  zoneId: 12345
+  description: Thanksgiving tariff
+  timeUnits:
+  - parkingTime: Thanksgiving,9:00%15:00
+    rate:
+      rateType: progressive
+      rate:
+      - price: 35$
+        rateInterval: 30m
+      - price: 25$
+        rateInterval: 1h
+      - price: 20$
+        rateType: othertime
+  #- parkingTime: Sat%Sun
+  #  rate:
+  #    rateType: flat
+  #    price: 20$
+

@@ -1,0 +1,127 @@
+- tariffId: 6
+  zoneId: 2004
+  description: Cale script for Package 333 (Early bird tariff)
+  timeUnits:
+    # blockage time, no parking allowed
+  - parkingTime: Mon%Fri,7:00%8:30
+    rate:
+      rateType: blocked
+  - parkingTime: Mon%Fri,8:30%11:00
+    # Set early parking rate in higher priority then later parking
+    priority: 1
+    rate:
+      rateType: progressive
+      rate:
+      - rateType: linear
+        rateInterval: 7m
+        price: 50c
+      - rateType: linear
+        rateInterval: 53m
+        price: 375c
+      - rateType: linear
+        rateInterval: 60m
+        price: 425c
+
+  - parkingTime: Mon%Fri,11:00%13:30
+    rate:
+      rateType: progressive
+      rate:
+      - rateType: linear
+        rateInterval: 12m
+        price: 100c
+      - rateType: linear
+        rateInterval: 48m
+        price: 375c
+      - rateType: linear
+        rateInterval: 60m
+        price: 475c
+
+  - parkingTime: Mon%Fri,13:30%15:30
+    rate:
+      rateType: progressive
+      rate:
+      - rateType: linear
+        rateInterval: 6m
+        price: 50c
+      - rateType: linear
+        rateInterval: 48m
+        price: 375c
+      - rateType: linear
+        rateInterval: 60m
+        price: 475c
+
+  - parkingTime: Sat,18:01%19:05
+    rate:
+      rateType: blocked
+      rate:
+      - rateType: linear
+        rateInterval: 7m
+        price: 50c
+      - rateType: linear
+        rateInterval: 60m
+        price: 100c
+
+# The same tariff as previous but
+# Early bird period was shifted to 11:00 % 13:30
+- tariffId: 7
+  zoneId: 2005
+  description: Cale script for Package 333 (Early bird tariff)
+  timeUnits:
+  # blockage time, no parking allowed
+  - parkingTime: Mon%Fri,7:00%8:30
+    rate:
+      rateType: blocked
+  - parkingTime: Mon%Fri,8:30%11:00
+    rate:
+      rateType: progressive
+      rate:
+      - rateType: linear
+        rateInterval: 7m
+        price: 50c
+      - rateType: linear
+        rateInterval: 53m
+        price: 375c
+      - rateType: linear
+        rateInterval: 60m
+        price: 425c
+
+  - parkingTime: Mon%Fri,11:00%13:30
+    # Set early parking rate in higher priority then later parking
+    priority: 1
+    rate:
+      rateType: progressive
+      rate:
+      - rateType: linear
+        rateInterval: 12m
+        price: 100c
+      - rateType: linear
+        rateInterval: 48m
+        price: 375c
+      - rateType: linear
+        rateInterval: 60m
+        price: 475c
+
+  - parkingTime: Mon%Fri,13:30%15:30
+    rate:
+      rateType: progressive
+      rate:
+      - rateType: linear
+        rateInterval: 6m
+        price: 50c
+      - rateType: linear
+        rateInterval: 48m
+        price: 375c
+      - rateType: linear
+        rateInterval: 60m
+        price: 475c
+
+  - parkingTime: Sat,18:01%19:05
+    rate:
+      rateType: blocked
+      rate:
+      - rateType: linear
+        rateInterval: 7m
+        price: 50c
+      - rateType: linear
+        rateInterval: 60m
+        price: 100c

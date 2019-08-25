@@ -1,0 +1,12 @@
+parkingTime: "Mon%Fri,8:00%16:00"
+rate:
+  rateType: progressive
+  price: 12$
+  rateInterval: 1h
+  rate:
+  - price: 20$
+    rateInterval: 30m
+  - price: 15$
+    rateInterval: 1h
+  - price: 10$
+    rateType: othertime

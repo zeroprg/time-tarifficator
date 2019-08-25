@@ -1,0 +1,18 @@
+tariffId: 1
+zoneId: 123
+description: working horse
+timeUnits:
+  - parkingTime: Mon%Fri,9:00%15:00
+    rate:
+      rateType: progressive
+      rate:
+      - price: 35$
+        rateInterval: 30m
+      - price: 25$
+        rateInterval: 1h
+      - price: 20$
+        rateType: othertime
+  - parkingTime: Sat%Sun
+    rate:
+      rateType: flat
+      price: 20$

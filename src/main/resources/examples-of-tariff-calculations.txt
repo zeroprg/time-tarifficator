@@ -1,0 +1,6 @@
+java Tarifficator.java -f tariffs.yaml  -zone 12345 -start "09-Oct-2018 5:00" -end "10-Oct-2018 16:00"  # Total: 80$  Only Tuesday
+java Tarifficator.java -f tariffs.yaml  -zone 123456 -start "09-Oct-2018 5:00" -end "10-Oct-2018 16:00" # Total: 80$  Only Tuesday
+java Tarifficator.java -f tariffs.yaml  -zone 123456 -start "09-Oct-2018 5:00" -end "12-Oct-2018 16:00" # Total: 160$ Including Thursday
+java Tarifficator.java -f tariffs.yaml  -zone 123456 -start "09-Oct-2018 5:00" -end "13-Oct-2018 16:00" # Total: 180$ Including Thursday and Saturday
+java Tarifficator.java -f tariffs.yaml  -zone 5432   -start "27-Nov-2018 08:00" -end "28-Nov-2018 12:00"# Total  160$ Inc. Tuesday & Wednesday
+java Tarifficator.java -f tariffs.yaml  -zone 5432   -start "27-Nov-2018 09:00" -end "27-Nov-2018 10:00"# Total  160$ Inc. Tuesday & Wednesday

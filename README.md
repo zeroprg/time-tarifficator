@@ -1,8 +1,13 @@
 # time-tarifficator
 Project to tarifficate time for any time payable operation.
-Below self readable example of Tariffs collection for parking:
 
-'''
+
+To calculate price use this line (more examples in examples.txt): 
+```
+java Tarifficator.java -f tariffs.yaml  -zone 12345 -start "09-Oct-2018 5:00" -end "10-Oct-2018 16:00"  # Total: 80$  Only Tuesday
+```
+Below self readable example of Tariffs collection for parking tariffication (tariff.yaml):
+```
 #Tariffs collection
 - tariffId: 1
   zoneId: 123
@@ -268,6 +273,6 @@ Below self readable example of Tariffs collection for parking:
         rateInterval: 60m
         price: 100c
 
-'''
+``` 
 
 

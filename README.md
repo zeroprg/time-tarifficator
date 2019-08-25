@@ -1,0 +1,273 @@
+# time-tarifficator
+Project to tarifficate time for any time payable operation.
+Below self readable example of Tariffs collection for parking:
+
+'''
+#Tariffs collection
+- tariffId: 1
+  zoneId: 123
+  description: working horse
+  timeUnits:
+    - parkingTime: Mon%Fri,9:00%15:00
+      rate:
+        rateType: progressive
+        rate:
+        - price: 35$
+          rateInterval: 30m
+        - price: 25$
+          rateInterval: 1h
+        - price: 20$
+          rateType: othertime
+    - parkingTime: Sat%Sun
+      rate:
+        rateType: flat
+        price: 20$
+
+- tariffId: 2
+  zoneId: 1234
+  description: festival's tariff
+  timeUnits:
+  - parkingTime: Christmas-2017,9:00%15:00
+    rate:
+      rateType: progressive
+      rate:
+      - price: 35$
+        rateInterval: 30m
+      - price: 25$
+        rateInterval: 1h
+      - price: 20$
+        rateType: othertime
+  - parkingTime: Sat%Sun
+    rate:
+      rateType: flat
+      price: 20$
+
+- tariffId: 3
+  zoneId: 12345
+  description: Thanksgiving tariff
+  timeUnits:
+  - parkingTime: Thanksgiving,9:00%15:00
+    rate:
+      rateType: progressive
+      rate:
+      - price: 35$
+        rateInterval: 30m
+      - price: 25$
+        rateInterval: 1h
+      - price: 20$
+        rateType: othertime
+  - parkingTime: Sat%Sun
+    rate:
+      rateType: flat
+      price: 20$
+
+- tariffId: 4
+  zoneId: Edm_3454
+  description: Even day tariff
+  timeUnits:
+    # blockage time, no parking allowed
+  - parkingTime: Tuesday,5:00%9:00
+    rate:
+      rateType: blocked
+  - parkingTime: Tuesday,9:00%15:00
+    rate:
+      rateType: progressive
+      rate:
+      - price: 35$
+        rateInterval: 30m
+      - price: 25$
+        rateInterval: 1h
+      - price: 20$
+        # until the end of the tariff
+        rateType: othertime
+  - parkingTime: Thursday,9:00%15:00
+    rate:
+      rateType: progressive
+      rate:
+      - price: 35$
+        rateInterval: 30m
+      - price: 25$
+        rateInterval: 1h
+      - price: 20$
+        rateType: othertime
+  - parkingTime: Sat%Sun
+    rate:
+      rateType: flat
+      price: 20$
+
+- tariffId: 5
+  zoneId: 5432
+  description: Even day tariff
+  timeUnits:
+  # blockage time, no parking allowed
+  - parkingTime: Tuesday,5:00%9:00
+    rate:
+      rateType: blocked
+  - parkingTime: Tuesday,9:00%15:00
+    rate:
+      rateType: progressive
+      rate:
+      - price: 30$
+        rateInterval: 60m
+      - price: 20$
+        rateInterval: 1h
+      - price: 20$
+        rateType: othertime
+  - parkingTime: Wed,9:00%15:00
+    rate:
+      rateType: progressive
+      rate:
+      - price: 60$
+        rateInterval: 60m
+      - price: 30$
+        rateInterval: 120m
+      - price: 20$
+        rateType: othertime
+  - parkingTime: Sat%Sun
+    rate:
+      rateType: flat
+      price: 20$
+
+- tariffId: 6
+  zoneId: 2004
+  description: Cale script for Package 333
+  maximum_time: 2h
+  timeUnits:
+  # blockage time, no parking allowed
+  - parkingTime: Mon%Fri,7:00%8:30
+    rate:
+      rateType: blocked
+  - parkingTime: Mon%Fri,8:30%11:00
+    rate:
+      rateType: progressive
+      rate:
+      - rateType: linear
+        rateInterval: 7m
+        price: 50c
+      - rateType: linear
+        rateInterval: 53m
+        price: 375c
+      - rateType: linear
+        rateInterval: 60m
+        price: 425c
+  - parkingTime: Mon%Fri,11:00%13:30
+    rate:
+      rateType: progressive
+      rate:
+      - rateType: linear
+        rateInterval: 12m
+        price: 1$
+      - rateType: linear
+        rateInterval: 48m
+        price: 375c
+      - rateType: linear
+        rateInterval: 60m
+        price: 475c
+  - parkingTime: Mon%Fri,13:30%15:30
+    rate:
+      rateType: progressive
+      rate:
+      - rateType: linear
+        rateInterval: 6m
+        price: 50c
+      - rateType: linear
+        rateInterval: 48m
+        price: 375c
+      - rateType: linear
+        rateInterval: 60m
+        price: 475c
+  - parkingTime: Sat,18:01%19:05
+    rate:
+      rateType: blocked
+      rate:
+        - rateType: linear
+          rateInterval: 7m
+          price: 50c
+        - rateType: linear
+          rateInterval: 60m
+          price: 100c
+
+- tariffId: 7
+  zoneId: 1523
+  description: Cale script for Package 588
+  timeUnits:
+  # blockage time, no parking allowed
+  - parkingTime: Mon%Fri,5:00%9:30
+    rate:
+      rateType: blocked
+  - parkingTime: Mon%Fri,15:30%18:30
+    rate:
+      rateType: blocked
+
+- tariffId: 8
+  zoneId: 333
+  description: Cale script for Package 333
+  maximum_time: 2h
+  timeUnits:
+  # blockage time, no parking allowed
+  - parkingTime: Mon%Fri,7:00%8:30
+    rate:
+      rateType: blocked
+  - parkingTime: Mon%Fri,15:30%18:00
+    rate:
+      rateType: blocked
+  - parkingTime: Sat,18:01%18:05
+    rate:
+      rateType: blocked
+# INTERVAL "Pmp1"
+  - parkingTime: Mon%Fri,8:30%11:00
+    rate:
+      rateType: progressive
+      rate:
+      - rateType: linear
+        rateInterval: 7m
+        price: 50c
+      - rateType: linear
+        rateInterval: 53m
+        price: 375c
+      - rateType: linear
+        rateInterval: 60m
+        price: 425c
+# INTERVAL "Pmp2"
+  - parkingTime: Mon%Fri,11:00%13:30
+    rate:
+      rateType: progressive
+      rate:
+      - rateType: linear
+        rateInterval: 12m
+        price: 50c
+      - rateType: linear
+        rateInterval: 48m
+        price: 375c
+      - rateType: linear
+        rateInterval: 60m
+        price: 475c
+# INTERVAL "Pmp3"
+  - parkingTime: Mon%Fri,13:30%15:30
+    rate:
+      rateType: progressive
+      rate:
+      - rateType: linear
+        rateInterval: 7m
+        price: 50c
+      - rateType: linear
+        rateInterval: 53m
+        price: 375c
+      - rateType: linear
+        rateInterval: 60m
+        price: 425c
+# INTERVAL "Sat"
+  - parkingTime: Sat,09:00%18:00
+    rate:
+      rateType: progressive
+      rate:
+      - rateType: linear
+        rateInterval: 60m
+        price: 50c
+      - rateType: linear
+        rateInterval: 60m
+        price: 100c
+
+'''
+
+
